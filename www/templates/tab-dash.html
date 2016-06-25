@@ -11,8 +11,13 @@
     <button class="button button-positive" ng-click="scan()">
         scan
     </button>
-    <button class="button button-balanced" ng-click="getGeolocalization()">
-      get current position GPS
+    <button class="button button-balanced" ng-click="getCurrentPosition()">
+      <div ng-if="gelocationData.idwatch !=''">
+        stop watch gps
+      </div>
+      <div ng-if="gelocationData.idwatch ==''">
+        start watch gps
+      </div>
     </button>
   </ion-content>
 </ion-view>

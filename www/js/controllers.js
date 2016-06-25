@@ -4,12 +4,13 @@ angular.module('starter.controllers', [])
   var canScan = false;
   var canLocalize = false;
   var watchID = "";
+  var navigationOptions = { timeout: 30000, enableHighAccuracy: true };
   $scope.batteryLevel = 0;       // (0 - 100)
   $scope.isPluggedIn = false;
   $scope.gelocationData = {};
 
   var onSuccess = function(position) {
-    $scope.gelocationData = {
+    var gelocationData = {
       latlong: [position.coords.latitude, position.coords.longitude],
       altitude: position.coords.altitude,
       accurancy: position.coords.accuracy,
@@ -18,11 +19,14 @@ angular.module('starter.controllers', [])
       timestap: position.timestamp,
       idwatch: watchID
     }
+    angular.copy(gelocationData, $scope.gelocationData);
+    $scope.$apply();
   };
 
   // onError Callback receives a PositionError object
   //
   function onError(error) {
+    //The device cannot trace the gps coordinates: idbus is degrade state.
     alert('code: '    + error.code    + '\n' +
         'message: ' + error.message + '\n');
   }
@@ -32,7 +36,7 @@ angular.module('starter.controllers', [])
     canScan = window.cordova && window.cordova.plugins && window.cordova.plugins.barcodeScanner;
     canLocalize = window.cordova && window.navigator.geolocation;
 
-    watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
+    watchID = navigator.geolocation.watchPosition(onSuccess, onError, navigationOptions);
 
     $rootScope.$on('$cordovaBatteryStatus:status', function (event, result) {
         $scope.batteryLevel = result.level;       // (0 - 100)
@@ -71,11 +75,12 @@ angular.module('starter.controllers', [])
 
     if (canLocalize){
       //navigator.geolocation.getCurrentPosition(onSuccess, onError);
-      if (watchID ===""){
-        watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
+      if (watchID == ""){
+        watchID = navigator.geolocation.watchPosition(onSuccess, onError, navigationOptions);
       } else {
         navigator.geolocation.clearWatch(watchID);
         watchID = "";
+        angular.copy({}, $scope.gelocationData)
       }
     }
   }
