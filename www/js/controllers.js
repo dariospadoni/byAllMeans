@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('byAllMeans.controllers', [])
 
 .controller('DashCtrl', function($scope, $cordovaBarcodeScanner) {
   $scope.scan = function () {
@@ -6,13 +6,12 @@ angular.module('starter.controllers', [])
       console.log(JSON.stringify(result));
     },
     function(cause){
-      alert(causer);
       console.log(JSON.stringify(cause));
     })
   }
 })
 
-.controller('ChatsCtrl', function($scope, Chats) {
+  .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),

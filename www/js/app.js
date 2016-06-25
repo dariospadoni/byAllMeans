@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter.services'])
+angular
+  .module('byAllMeans', ['ionic', 'ngCordova', 'ngResource', 'ngCookies', 'byAllMeans.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -24,7 +25,9 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
 
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $httpProvider, $urlRouterProvider) {
+
+  $httpProvider.interceptors.push('authInterceptor');
 
   $stateProvider
   // setup an abstract state for the tabs directive
@@ -32,6 +35,12 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
     url: '/tab',
     abstract: true,
     templateUrl: 'templates/tabs.html'
+  })
+
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'LoginController'
   })
 
   // Each tab has its own nav history stack:

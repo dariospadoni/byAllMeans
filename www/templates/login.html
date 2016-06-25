@@ -1,0 +1,31 @@
+
+<ion-view  align-title="left">
+    <ion-content class="login grayBg" >
+
+        <div class="banner">
+            <div class="content">
+            </div>
+        </div>
+
+        <div class="list">
+            <label class="item item-input error" ng-if="errorMsg">
+                {{errorMsg}}
+            </label>
+            <label class="item item-input">
+                <input placeholder="Username" type="text" ng-model="data.email"type="text" />
+            </label>
+
+            <label class="item item-input">
+                <input placeholder="Password" type="password" ng-model="data.password"type="text" />
+            </label>
+        </div>
+
+        <div class="list">
+            <div class="item">
+                <button class="button loginButton button-small" type="submit" ng-click="submit()">Login</button>
+            </div>
+        </div>
+
+
+    </ion-content>
+</ion-view>
