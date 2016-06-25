@@ -1,4 +1,4 @@
-<ion-view view-title="Journey Confirmation" class="noScrollOverflow">
+<ion-view view-title="Journey Confirmation" class="noScrollOverflow grayBg">
 
     <ion-content class="has-header">
 
@@ -14,23 +14,20 @@
 
             <div class="item">
                 <small class="legend">Price</small>
-                <div class="item-desc">{{currentJourney.price}}</div>
+                <div class="item-desc">{{currentJourney.price}} &euro;</div>
             </div>
 
             <div class="item">
                 <small class="legend">Passengers</small>
-                <div class="item-desc">{{currentJourney.price}}</div>
+                <div class="item-desc">{{currentJourney.numPassengers}}</div>
             </div>
-
-            <a class="item item-icon-left assertive" href="#">
-                <i class="icon ion-music-note"></i>
-                Start listening
-            </a>
 
         </div>
 
-
-
     </ion-content>
+
+    <ion-footer-bar ng-click="confirmJourney()" class="yellowButton text-center">
+        Confirm
+    </ion-footer-bar>
 
 </ion-view>

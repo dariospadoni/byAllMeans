@@ -33,6 +33,20 @@
     background: transparent;
 }
 
+.grayBg {
+    background: rgb(216, 216, 216);
+}
+
+.yellowButton {
+    color: #000;
+    text-align: center;
+    background: rgb(254, 218, 50);
+    display: block;
+    padding-top: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
 .scanBg {
     min-height: 600px;
     display: flex;
@@ -59,5 +73,5 @@
     color: white;
 }
 
-.item > small.legend { color: rgba(0,0,0, 0.4); text-transform: capitalize; font-size: 10px; }
+.item > small.legend { color: rgba(0,0,0, 0.4); text-transform: uppercase; font-size: 10px; }
 .item > div.item-desc { color: black; font-size: 16px;}

@@ -15,14 +15,17 @@ angular
         reduced: 0,
         family: 0,
         senior: 0
-      }
+      },
+      numPassengers: 1
     };
-
 
     $scope.onStopSelected = function(stop) {
       console.log(stop);
     };
 
+    $scope.confirmJourney = function() {
+      alert(1);
+    };
 
     $scope.init = function() {
       JourneyServices.getLineStops(5402).then(function(res) {
