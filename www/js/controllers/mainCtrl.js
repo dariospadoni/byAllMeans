@@ -5,7 +5,7 @@ angular
   .module('byAllMeans')
 
   .controller('MainController', function($scope, $rootScope, $state, AuthServices, JourneyServices) {
-
+    $scope.currentUser = null;
     $scope.currentJourney = {
       departure: 'St. Salvator',
       arrival: 'Klagenfurt',
@@ -53,7 +53,8 @@ angular
       }
       else {
         console.log('user already loggedin');
-        $state.go('login');//$state.go('tab.dash');
+        $scope.currentUser = JSON.parse(AuthServices.getLoggedUser());
+        $state.go('tab.profile');//$state.go('tab.dash');
       }
     };
 
