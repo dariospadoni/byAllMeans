@@ -1,5 +1,11 @@
 /* Empty. Add your own CSS if you like */
 
+input::-webkit-input-placeholder{
+    color:white;
+}
+input:-moz-placeholder {
+    color:white;
+}
 
 .bar {
     background: rgb(13, 154, 156);
@@ -33,8 +39,19 @@
     background: transparent;
 }
 
-.grayBg {
-    background: rgb(216, 216, 216);
+.greenBg { background: rgb(13, 154, 156); }
+
+.grayBg { background: rgb(216, 216, 216); }
+
+.yellow { color: rgb(254, 218, 50); }
+
+.button.yellow {
+    background: rgb(254, 218, 50);
+}
+.button.fb {
+    color: white;
+    background: rgb(57, 87, 154);
+    margin-bottom: 20px;
 }
 
 .yellowButton {
@@ -75,3 +92,7 @@
 
 .item > small.legend { color: rgba(0,0,0, 0.4); text-transform: uppercase; font-size: 10px; }
 .item > div.item-desc { color: black; font-size: 16px;}
+
+.login { background: transparent; color: white; }
+.login .item-input { background: transparent; border: none; border-bottom: 1px solid white;}
+.login  input { color: white; }

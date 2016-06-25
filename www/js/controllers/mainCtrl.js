@@ -49,7 +49,7 @@ angular
       }
       else {
         console.log('user already loggedin');
-        // $state.go('tab.dash');
+        $state.go('login');//$state.go('tab.dash');
       }
     };
 
