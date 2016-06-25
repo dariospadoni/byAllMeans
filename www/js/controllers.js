@@ -1,13 +1,83 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, $cordovaBarcodeScanner) {
+.controller('DashCtrl', function($rootScope, $scope, $cordovaBarcodeScanner, $cordovaGeolocation, $cordovaBatteryStatus) {
+  var canScan = false;
+  var canLocalize = false;
+  var watchID = "";
+  $scope.batteryLevel = 0;       // (0 - 100)
+  $scope.isPluggedIn = false;
+  $scope.gelocationData = {};
+
+  var onSuccess = function(position) {
+    $scope.gelocationData = {
+      latlong: [position.coords.latitude, position.coords.longitude],
+      altitude: position.coords.altitude,
+      accurancy: position.coords.accuracy,
+      heading: position.coords.heading,
+      speed: position.coords.speed,
+      timestap: position.timestamp,
+      idwatch: watchID
+    }
+  };
+
+  // onError Callback receives a PositionError object
+  //
+  function onError(error) {
+    alert('code: '    + error.code    + '\n' +
+        'message: ' + error.message + '\n');
+  }
+
+  document.addEventListener("deviceready", function () {
+    console.log('device ready');
+    canScan = window.cordova && window.cordova.plugins && window.cordova.plugins.barcodeScanner;
+    canLocalize = window.cordova && window.navigator.geolocation;
+
+    watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
+
+    $rootScope.$on('$cordovaBatteryStatus:status', function (event, result) {
+        $scope.batteryLevel = result.level;       // (0 - 100)
+        $scope.isPluggedIn  = result.isPlugged;   // bool
+    });
+
+    $rootScope.$on('$cordovaBatteryStatus:critical', function (event, result) {
+      $scope.batteryLevel = result.level;       // (0 - 100)
+      $scope.isPluggedIn  = result.isPlugged;   // bool
+    });
+
+    $rootScope.$on('$cordovaBatteryStatus:low', function (event, result) {
+      $scope.batteryLevel = result.level;       // (0 - 100)
+      $scope.isPluggedIn  = result.isPlugged;   // bool
+    });
+
+  }, false);
+
   $scope.scan = function () {
-    $cordovaBarcodeScanner.scan().then(function(result){
-      console.log(JSON.stringify(result));
-    },
-    function(cause){
-      console.log(JSON.stringify(cause));
-    })
+    if (canScan){
+      $cordovaBarcodeScanner.scan().then(function(result){
+        if (!result.cancelled && result.format === "QR_CODE"){
+          $scope.text = result.text;
+        }
+        console.log(JSON.stringify(result));
+      },
+      function(cause){
+        console.log(JSON.stringify(cause));
+      })
+    } else{
+      console.log('not allowed');
+    }
+  };
+
+  $scope.getCurrentPosition = function(){
+
+    if (canLocalize){
+      //navigator.geolocation.getCurrentPosition(onSuccess, onError);
+      if (watchID ===""){
+        watchID = navigator.geolocation.watchPosition(onSuccess, onError, { timeout: 30000, enableHighAccuracy: true });
+      } else {
+        navigator.geolocation.clearWatch(watchID);
+        watchID = "";
+      }
+    }
   }
 })
 

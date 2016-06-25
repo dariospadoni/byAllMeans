@@ -22,10 +22,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter
     }
   });
 
-  document.addEventListener("deviceready", function () {
-    console.log('device ready')
-  }, false);
-
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
