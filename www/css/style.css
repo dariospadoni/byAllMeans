@@ -17,7 +17,33 @@ input:-moz-placeholder {
     background: rgb(52, 52, 52);
 }
 
- .bar-subheader > div {
+.profile .item-avatar.bar-header {
+    background: rgb(52, 52, 52);
+    height: 98px;
+    color: white;
+    overflow: visible;
+    z-index: 1000;
+}
+
+.profile .item-avatar.bar-header > h2 {
+    padding: 25px;
+    color: white;
+}
+
+.profile .item-avatar.bar-header > img {
+    max-width:64px;
+    max-height:64px;
+    border: 1px solid rgb(254, 218, 50);
+}
+
+.profile .item-avatar.bar-header > img.logo {
+    position:absolute;
+    bottom: -16px;
+    right:10px;
+    border: none;
+}
+
+.bar-subheader > div {
     color: white;
     width: 200px;
     margin: 0 auto;
@@ -97,3 +123,12 @@ input:-moz-placeholder {
 .login { background: transparent; color: white; }
 .login .item-input { background: transparent; border: none; border-bottom: 1px solid white;}
 .login  input { color: white; }
+
+.profile .list a {
+    padding-top: 26px;
+    height: 72px;
+}
+
+.profile .list .item-icon-left .icon {
+    font-size: 22px;
+}

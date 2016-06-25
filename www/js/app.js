@@ -44,6 +44,7 @@ angular
     templateUrl: 'templates/journey-confirmation.html'
   })
 
+
   // Each tab has its own nav history stack:
   .state('tab.dash', {
     url: '/dash',
@@ -55,12 +56,11 @@ angular
     }
   })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.profile', {
+    url: '/profile',
     views: {
       'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+        templateUrl: 'templates/tab-profile.html'
       }
     }
   })
