@@ -1,11 +1,31 @@
 <ion-view view-title="Dashboard">
   <ion-content class="padding">
 
+
     <line-stops ng-if="stops" on-stop-selected="onStopSelected({stop:stop})" stops="stops" />
 
 
+    <div>{{text}}</div>
+    <p>{{batteryLevel}} %</p>
+    <p>{{isPluggedIn}}</p>
+    <div if-ng="gelocationData">
+      <p>{{gelocationData.latlong[0]}}</p>
+      <p>{{gelocationData.latlong[1]}}</p>
+      <p>{{gelocationData.idwatch}}</p>
+    </div>
+
     <button class="button button-positive" ng-click="scan()">
-        button-positive
+        scan
     </button>
+    <button class="button button-balanced" ng-click="getCurrentPosition()">
+      <div ng-if="gelocationData.idwatch !=''">
+        stop watch gps
+      </div>
+      <div ng-if="gelocationData.idwatch ==''">
+        start watch gps
+      </div>
+    </button>
+
+
   </ion-content>
 </ion-view>

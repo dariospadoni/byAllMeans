@@ -35,10 +35,6 @@ angular
       }
     };
 
-    $rootScope.$on('login', function() {
-      loadUserDataAndJobs(true);
-    });
-
     $scope.logout = function() {
       AuthServices.logout();
       $state.go('login');
