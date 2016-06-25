@@ -54,7 +54,7 @@ angular
       else {
         console.log('user already loggedin');
         $scope.currentUser = JSON.parse(AuthServices.getLoggedUser());
-        $state.go('journey-reports');//$state.go('tab.dash');
+        $state.go('tab.profile');//$state.go('tab.dash');
       }
     };
 

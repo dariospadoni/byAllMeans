@@ -19,7 +19,7 @@ input:-moz-placeholder {
 
 .profile .item-avatar.bar-header {
     background: rgb(52, 52, 52);
-    height: 98px;
+    height: 98px !important;
     color: white;
     overflow: visible;
     z-index: 1000;
@@ -105,7 +105,7 @@ input:-moz-placeholder {
 }
 
 .ticket-header {
-    background-image: url('../img/ticket-header.png');
+    background-image: url('img/ticket-header.png');
     background-size: cover;
     position: relative;
     height: 160px;
@@ -139,4 +139,14 @@ input:-moz-placeholder {
 
 .profile .list .item-icon-left .icon {
     font-size: 22px;
+}
+
+.bar.bar-subheader.ios-header-top { top: 44px; }
+
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > .ios-no-margin {
+    margin-top: 0;
+}
+
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > .ios-header-top {
+    top:64px;
 }
