@@ -39,6 +39,11 @@ angular
     controller: 'LoginController'
   })
 
+  .state('journey-confirmation', {
+    url: '/journey-confirmation',
+    templateUrl: 'templates/journey-confirmation.html'
+  })
+
   // Each tab has its own nav history stack:
   .state('tab.dash', {
     url: '/dash',
@@ -81,6 +86,6 @@ angular
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('#/tab/dash');
 
 });

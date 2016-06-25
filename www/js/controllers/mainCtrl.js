@@ -6,6 +6,19 @@ angular
 
   .controller('MainController', function($scope, $rootScope, $state, AuthServices, JourneyServices) {
 
+    $scope.currentJourney = {
+      departure: 'St. Salvator',
+      arrival: 'Klagenfurt',
+      price: 2.2,
+      tickets: {
+        normal: 1,
+        reduced: 0,
+        family: 0,
+        senior: 0
+      }
+    };
+
+
     $scope.onStopSelected = function(stop) {
       console.log(stop);
     };
@@ -33,7 +46,7 @@ angular
       }
       else {
         console.log('user already loggedin');
-        $state.go('tab.dash');
+        $state.go('journey-confirmation');//$state.go('tab.dash');
       }
     };
 

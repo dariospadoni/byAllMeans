@@ -1,0 +1,36 @@
+<ion-view view-title="Journey Confirmation" class="noScrollOverflow">
+
+    <ion-content class="has-header">
+
+        <div class="list card">
+
+            <div class="item ticket-header">
+                <div class="travel-desc">
+                    {{currentJourney.departure}}
+                    <span class="ion-arrow-right-c"></span>
+                    {{currentJourney.arrival}}
+                </div>
+            </div>
+
+            <div class="item">
+                <small class="legend">Price</small>
+                <div class="item-desc">{{currentJourney.price}}</div>
+            </div>
+
+            <div class="item">
+                <small class="legend">Passengers</small>
+                <div class="item-desc">{{currentJourney.price}}</div>
+            </div>
+
+            <a class="item item-icon-left assertive" href="#">
+                <i class="icon ion-music-note"></i>
+                Start listening
+            </a>
+
+        </div>
+
+
+
+    </ion-content>
+
+</ion-view>
