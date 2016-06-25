@@ -25,10 +25,10 @@ angular
 
 
     $scope.init = function() {
-      /*JourneyServices.getLineStops(5402).then(function(res) {
+      JourneyServices.getLineStops(5402).then(function(res) {
         $scope.stops = res.data;
       });
-
+/*
       JourneyServices.getBusLine('7A').then(function(data) {
         JourneyServices.checkin(data.lineId).then(function(d) {
           JourneyServices.checkout(d.data._id).then(function(e) {

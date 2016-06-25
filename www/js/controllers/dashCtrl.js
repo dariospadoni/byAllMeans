@@ -7,14 +7,14 @@ angular
   .controller('DashCtrl', function($scope, STORAGE_RUN, JourneyServices) {
     var canScan = false;
     $scope.showCheckin = false;
-    $scope.showJourney = false;
-    $scope.showScan = true;
+    $scope.showScan = false;
 
     $scope.showPage = function (page) {
       $scope.showCheckin = page === 'checkin' ;
       $scope.showScan= page === 'scan';
-      $scope.showJourney = page === 'journey';
     };
+
+    $scope.showPage('checkin');
 
     document.addEventListener("deviceready", function () {
       console.log('device ready');
@@ -51,4 +51,3 @@ angular
 
 
 });
-

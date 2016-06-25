@@ -55,16 +55,6 @@ angular
     }
   })
 
-  .state('tab.login', {
-    url: '/login',
-    views: {
-      'Login': {
-        template: 'templates/Login.html',
-        controller: 'LoginCtrl'
-      }
-    }
-  })
-
   .state('tab.account', {
     url: '/account',
     views: {
