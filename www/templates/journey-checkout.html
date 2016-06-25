@@ -1,4 +1,4 @@
-<ion-view view-title="Journey Confirmation" class="noScrollOverflow grayBg">
+<ion-view view-title="Your journey" class="noScrollOverflow grayBg">
 
     <ion-content class="has-header">
 
@@ -18,17 +18,12 @@
               </div>
             </div>
 
-            <div class="item">
-                <small class="legend">Passengers</small>
-                <div class="item-desc">{{currentJourney.numPassengers}}</div>
-            </div>
-
         </div>
 
     </ion-content>
 
-    <ion-footer-bar ng-click="confirmJourney()" class="yellowButton text-center">
-        Confirm
+    <ion-footer-bar ng-click="stopJourney()" class="yellowButton text-center">
+        STOP JOURNEY
     </ion-footer-bar>
 
 </ion-view>

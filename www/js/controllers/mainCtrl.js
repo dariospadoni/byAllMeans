@@ -27,6 +27,10 @@ angular
       alert(1);
     };
 
+    $scope.stopJourney = function() {
+      alert(2);
+    };
+
     $scope.init = function() {
       JourneyServices.getLineStops(5402).then(function(res) {
         $scope.stops = res.data;

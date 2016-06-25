@@ -44,14 +44,14 @@ angular
     templateUrl: 'templates/journey-confirmation.html'
   })
 
-  .state('journey-confirmation', {
-    url: '/journey-confirmation',
-    templateUrl: 'templates/journey-confirmation.html'
-  })
-
   .state('journey-checkout', {
     url: '/journey-checkout',
     templateUrl: 'templates/journey-checkout.html'
+  })
+
+  .state('journey-reports', {
+    url: '/journey-reports',
+    templateUrl: 'templates/journey-reports.html'
   })
 
   // Each tab has its own nav history stack:

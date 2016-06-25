@@ -97,3 +97,11 @@ input:-moz-placeholder {
 .login { background: transparent; color: white; }
 .login .item-input { background: transparent; border: none; border-bottom: 1px solid white;}
 .login  input { color: white; }
+
+.smallDivider {
+  border-top: 0.5px solid black;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  opacity: 0.1;
+}
