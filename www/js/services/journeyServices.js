@@ -5,7 +5,6 @@ angular
   .module('byAllMeans')
 
   .factory('JourneyServices', function($http, API_ENDPOINT) {
-    var currentUser = null;
 
     function getBusLine(busId) {
       return $http.get(API_ENDPOINT + '/api/buses/number/' + busId);

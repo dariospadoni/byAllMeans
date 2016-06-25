@@ -12,16 +12,9 @@ angular
     $scope.submit = function() {
       $scope.errorMsg = null;
       $ionicLoading.show();
-      AuthServices
-        .login($scope.data)
-        .then(function() {
-          $rootScope.$broadcast('login');
-        }, function(errorMsg) {
-          $scope.errorMsg = errorMsg ;
-        })
-        .finally(function(){
-          $ionicLoading.hide();
-        });
+      AuthServices.login();
+      $rootScope.$broadcast('login');
+      $ionicLoading.hide();
     };
 
   });

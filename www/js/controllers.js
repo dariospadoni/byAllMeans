@@ -1,6 +1,6 @@
 angular.module('byAllMeans.controllers', [])
 
-.controller('DashCtrl', function($rootScope, $scope,  $cordovaBarcodeScanner, $cordovaGeolocation, $cordovaBatteryStatus) {
+.controller('DashCtrlOld', function($rootScope, $scope,  $cordovaBarcodeScanner, $cordovaGeolocation, $cordovaBatteryStatus) {
   var canScan = false;
   var canLocalize = false;
   var watchID = "";

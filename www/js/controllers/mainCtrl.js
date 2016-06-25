@@ -10,8 +10,9 @@ angular
       console.log(stop);
     };
 
+
     $scope.init = function() {
-      JourneyServices.getLineStops(5402).then(function(res) {
+      /*JourneyServices.getLineStops(5402).then(function(res) {
         $scope.stops = res.data;
       });
 
@@ -23,6 +24,7 @@ angular
 
         })
       });
+      */
       console.log('MainCtrl init...');
       //no logged user, redirect to login
       if (AuthServices.getLoggedUser() === null) {
@@ -34,6 +36,10 @@ angular
         $state.go('tab.dash');
       }
     };
+
+    $rootScope.$on('login', function() {
+      $state.go('tab.dash');
+    });
 
     $scope.logout = function() {
       AuthServices.logout();
