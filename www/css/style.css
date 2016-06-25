@@ -47,6 +47,7 @@ input:-moz-placeholder {
 
 .button.yellow {
     background: rgb(254, 218, 50);
+    color: black;
 }
 .button.fb {
     color: white;
