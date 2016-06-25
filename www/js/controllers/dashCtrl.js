@@ -11,7 +11,7 @@ angular
 
     $scope.showPage = function (page) {
       $scope.showCheckin = page === 'checkin' ;
-      $scope.showScan= page === 'scan';
+      $scope.showScan = page === 'scan';
     };
 
     $scope.showPage('');

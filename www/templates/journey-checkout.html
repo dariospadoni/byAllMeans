@@ -1,0 +1,34 @@
+<ion-view view-title="Journey Confirmation" class="noScrollOverflow grayBg">
+
+    <ion-content class="has-header">
+
+        <div class="list card">
+
+            <div class="item ticket-header">
+                <div class="travel-desc">
+                    {{currentJourney.departure}}
+                    <span class="ion-arrow-right-c"></span>
+                    {{currentJourney.arrival}}
+                </div>
+            </div>
+
+            <div class="item">
+              <div class="content">
+                <line-stops ng-if="stops" on-stop-selected="onStopSelected({stop:stop})" stops="stops" />
+              </div>
+            </div>
+
+            <div class="item">
+                <small class="legend">Passengers</small>
+                <div class="item-desc">{{currentJourney.numPassengers}}</div>
+            </div>
+
+        </div>
+
+    </ion-content>
+
+    <ion-footer-bar ng-click="confirmJourney()" class="yellowButton text-center">
+        Confirm
+    </ion-footer-bar>
+
+</ion-view>
