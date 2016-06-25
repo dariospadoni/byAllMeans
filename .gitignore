@@ -5,3 +5,10 @@ node_modules/
 platforms/
 plugins/
 .idea/
+www/lib/angular-animate/
+www/lib/angular-cookies/
+www/lib/angular-resource/
+www/lib/angular-sanitize/
+www/lib/angular-ui-router/
+www/lib/angular/
+www/lib/ngCordova/
