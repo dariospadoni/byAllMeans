@@ -14,15 +14,21 @@
     <div ng-if="showScan">
 
       <div class="bar bar-header">
-        <h1 class="title">Scan code</h1>
-      </div>
-      <div class="bar bar-subheader">
+        <!-- <h1 class="title">Scan code</h1> -->
         <h2 class="title">Get on board and scan the code to start tracking your journey</h2>
       </div>
+      <!-- <div class="bar bar-subheader">
 
-      <div  style="background-color:#ddd;">fsfsdfd
+      </div> -->
 
+      <div style="position: absolute; top: 60px;">
+        <button class="button button-positive" ng-click="showPage('journey')">
+          Journey
+        </button>
       </div>
+    </div>
+
+    <div ng-if="showJourney">
 
     </div>
 <!--
