@@ -1,1 +1,39 @@
 /* Empty. Add your own CSS if you like */
+
+
+.bar {
+    background: rgb(13, 154, 156);
+    color: white;
+}
+
+.bar.bar-subheader {
+    top: 0;
+    background: rgb(52, 52, 52);
+}
+ .bar-subheader > div {
+    color: white;
+    width: 200px;
+    margin: 0 auto;
+    padding: 4px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.scroll {
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.scanBg {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scanBg .scanArea {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+
+}
