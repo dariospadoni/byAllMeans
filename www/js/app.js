@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('starter', ['ionic'])
+angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -15,7 +15,13 @@ angular.module('starter', ['ionic'])
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
+    console.log('ionic platform ready')
   });
+
+  document.addEventListener("deviceready", function () {
+    console.log('device ready')
+  }, false);
+
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
