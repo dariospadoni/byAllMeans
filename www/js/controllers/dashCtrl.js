@@ -14,7 +14,7 @@ angular
       $scope.showScan= page === 'scan';
     };
 
-    $scope.showPage('checkin');
+    $scope.showPage('');
 
     document.addEventListener("deviceready", function () {
       console.log('device ready');

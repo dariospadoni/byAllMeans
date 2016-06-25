@@ -46,7 +46,7 @@ angular
       }
       else {
         console.log('user already loggedin');
-        $state.go('journey-confirmation');//$state.go('tab.dash');
+        $state.go('tab.dash');
       }
     };
 
