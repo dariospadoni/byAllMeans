@@ -19,9 +19,7 @@ angular
       numPassengers: 1
     };
 
-    $scope.onStopSelected = function(stop) {
-      console.log(stop);
-    };
+
 
     $scope.confirmJourney = function() {
       $state.go('journey-checkout');

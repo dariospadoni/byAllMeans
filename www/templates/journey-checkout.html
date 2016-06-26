@@ -14,7 +14,7 @@
 
             <div class="item">
               <div class="content">
-                <line-stops ng-if="stops" on-stop-selected="onStopSelected({stop:stop})" stops="stops" />
+                <line-stops last-stop="currentJourney.arrivalCode" ng-if="stops" on-stop-selected="onStopSelected({stop:stop})" stops="stops" />
               </div>
             </div>
 

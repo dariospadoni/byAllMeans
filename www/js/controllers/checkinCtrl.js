@@ -18,6 +18,7 @@ angular
 */
 
     $scope.onStopSelected = function(stop) {
+      $scope.currentJourney.arrivalCode = stop.stop.properties.OBJECTID;
       $scope.currentJourney.arrival = stop.stop.properties.HSTHAUPTNA;
       $state.go('journey-confirmation');
     };
