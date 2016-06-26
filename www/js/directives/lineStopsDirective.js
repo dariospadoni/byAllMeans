@@ -20,7 +20,7 @@ angular
 
               $scope.selectStop = function(stop) {
                   if ($scope.onStopSelected) {
-                      $scope.onStopSelected(stop);
+                      $scope.onStopSelected({stop: stop});
                   }
               }
 

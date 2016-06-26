@@ -17,7 +17,8 @@ angular
 
 */
 
-    $scope.onStopSelected = function() {
+    $scope.onStopSelected = function(stop) {
+      $scope.currentJourney.arrival = stop.stop.properties.HSTHAUPTNA;
       $state.go('journey-confirmation');
     };
 
