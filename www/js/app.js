@@ -42,6 +42,7 @@ angular
   .state('journey-confirmation', {
     url: '/journey-confirmation',
     templateUrl: 'templates/journey-confirmation.html'
+
   })
 
   .state('journey-checkin', {
@@ -52,7 +53,12 @@ angular
 
   .state('journey-checkout', {
     url: '/journey-checkout',
-    templateUrl: 'templates/journey-checkout.html'
+    templateUrl: 'templates/journey-checkout.html',
+    controller: function($scope,$state) {
+      $scope.onStopSelected = function(stop) {
+        $state.go('tab.profile');
+      };
+    }
   })
 
   .state('journey-reports', {
