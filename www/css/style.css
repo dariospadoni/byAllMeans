@@ -45,7 +45,7 @@ input:-moz-placeholder {
 
 .bar-subheader > div {
     color: white;
-    width: 200px;
+    width: 300px;
     margin: 0 auto;
     padding: 4px;
     text-align: center;
@@ -92,7 +92,7 @@ input:-moz-placeholder {
 }
 
 .scanBg {
-    min-height: 600px;
+    min-height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -149,6 +149,10 @@ input:-moz-placeholder {
 
 .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > .ios-header-top {
     top:64px;
+}
+
+.platform-ios.platform-cordova:not(.fullscreen) .bar-subheader.ios-header-top-zero {
+    top:0px !important;
 }
 
 .tab-nav.tabs a { margin-top: 6px !important; }
