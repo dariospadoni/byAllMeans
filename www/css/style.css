@@ -150,3 +150,8 @@ input:-moz-placeholder {
 .platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > .ios-header-top {
     top:64px;
 }
+
+.tab-nav.tabs a { margin-top: 6px !important; }
+
+.bar .button.button-icon.backButton { color: white; }
+.bar .button.button-icon.backButton:before {  vertical-align: middle;  font-size: 20px;}
