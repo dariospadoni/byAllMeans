@@ -4,17 +4,16 @@ angular
 
   .module('byAllMeans')
 
-  .controller('DashCtrl', function($scope, STORAGE_RUN, JourneyServices) {
+  .controller('DashCtrl', function($scope, $state, STORAGE_RUN, JourneyServices) {
     var canScan = false;
-    $scope.showCheckin = false;
-    $scope.showScan = false;
+    $scope.showScan = true;
+
 
     $scope.showPage = function (page) {
-      $scope.showCheckin = page === 'checkin' ;
       $scope.showScan = page === 'scan';
     };
 
-    $scope.showPage('');
+
 
     document.addEventListener("deviceready", function () {
       console.log('device ready');

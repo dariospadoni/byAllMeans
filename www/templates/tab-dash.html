@@ -1,35 +1,16 @@
 <ion-view view-title="Scan Code">
   <ion-content class="has-header">
 
-    <div ng-if="showCheckin">
-      <!-- stops list -->
-      <div class="content">
-        <line-stops ng-if="stops" on-stop-selected="onStopSelected({stop:stop})" stops="stops" />
-      </div>
-
-      <ul class="list">
-        <li class="item item-toggle">
-           Travelling with more people?
-           <label class="toggle toggle-assertive">
-             <input type="checkbox">
-             <div class="track">
-               <div class="handle"></div>
-             </div>
-           </label>
-        </li>
-      </ul>
-
-      <a class="button button-block" ng-click="showPage('confirmation')">Start journey </a>
-    </div>
-
     <div ng-if="showScan" class="scan">
 
       <div class="bar bar-subheader" style="height:60px;">
         <div>Get on board and scan the code to start tracking your journey</div>
       </div>
 
-      <div class="scanBg">
-        <div class="scanArea"></div>
+      <div class="scanBg" ui-sref="journey-checkin">
+        <div class="scanArea">
+          <img src="img/qr.png" width="200">
+        </div>
       </div>
 
     </div>

@@ -44,6 +44,12 @@ angular
     templateUrl: 'templates/journey-confirmation.html'
   })
 
+  .state('journey-checkin', {
+    url: '/journey-checkin',
+    templateUrl: 'templates/journey-checkin.html',
+    controller: 'CheckinController'
+  })
+
   .state('journey-checkout', {
     url: '/journey-checkout',
     templateUrl: 'templates/journey-checkout.html'

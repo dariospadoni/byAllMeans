@@ -105,7 +105,7 @@ input:-moz-placeholder {
 }
 
 .ticket-header {
-    background-image: url('img/ticket-header.png');
+    background-image: url('../img/ticket-header.png');
     background-size: cover;
     position: relative;
     height: 160px;

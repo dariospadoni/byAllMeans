@@ -1,0 +1,32 @@
+<ion-view view-title="Start Journey" class="noScrollOverflow grayBg">
+
+    <ion-nav-buttons side="left">
+        <a ui-sref="tab.dash" class="button button-icon ion-arrow-left-c backButton"></a>
+    </ion-nav-buttons>
+
+    <ion-content class="has-header">
+
+        <div class="content">
+            <line-stops ng-if="stops" on-stop-selected="onStopSelected({stop:stop})" stops="stops" />
+        </div>
+
+        <ul class="list">
+            <li class="item item-toggle">
+                Travelling with more people?
+                <label class="toggle toggle-assertive">
+                    <input type="checkbox">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </li>
+        </ul>
+
+
+    </ion-content>
+
+    <ion-footer-bar ng-click="confirmJourney()" class="yellowButton text-center">
+        Start Journey
+    </ion-footer-bar>
+
+</ion-view>

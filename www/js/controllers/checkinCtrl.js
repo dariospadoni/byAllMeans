@@ -4,8 +4,8 @@ angular
 
   .module('byAllMeans')
 
-  .controller('CheckinController', function($scope, JourneyServices) {
-
+  .controller('CheckinController', function($scope, $state) {
+  /*
     $scope.stops = [];
 
     $scope.getStops = function(busId) {
@@ -14,6 +14,13 @@ angular
         $state.$go('stops')
       });
     };
+
+*/
+
+    $scope.onStopSelected = function() {
+      $state.go('journey-confirmation');
+    };
+
 
   });
 

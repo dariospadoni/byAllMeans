@@ -24,11 +24,11 @@ angular
     };
 
     $scope.confirmJourney = function() {
-      alert(1);
+      $state.go('journey-checkout');
     };
 
     $scope.stopJourney = function() {
-      alert(2);
+      $state.go('tab.profile');
     };
 
     $scope.init = function() {
@@ -54,7 +54,7 @@ angular
       else {
         console.log('user already loggedin');
         $scope.currentUser = JSON.parse(AuthServices.getLoggedUser());
-        $state.go('tab.profile');//$state.go('tab.dash');
+        $state.go('tab.dash');
       }
     };
 
