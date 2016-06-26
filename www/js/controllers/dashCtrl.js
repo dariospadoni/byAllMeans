@@ -8,12 +8,7 @@ angular
     var canScan = false;
     $scope.showScan = true;
 
-
-    $scope.showPage = function (page) {
-      $scope.showScan = page === 'scan';
-    };
-
-
+    /*
 
     document.addEventListener("deviceready", function () {
       console.log('device ready');
@@ -24,6 +19,7 @@ angular
         $state.go('tab.account');
       }
     });
+
 
     function scan () {
       $cordovaBarcodeScanner.scan().then(function(result){
@@ -47,6 +43,6 @@ angular
         console.log(JSON.stringify(cause));
       })
     };
-
+*/
 
 });
