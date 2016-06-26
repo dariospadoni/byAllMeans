@@ -4,11 +4,11 @@
         <a ui-sref="tab.dash" class="button button-icon ion-arrow-left-c backButton"></a>
     </ion-nav-buttons>
 
-    <ion-content class="has-header">
+    <div class="bar bar-subheader ios-header-top">
+        <div>Select your final destination</div>
+    </div>
 
-        <div class="bar bar-subheader ios-header-top-zero" style="padding:6px;">
-            <div>Select your final destination</div>
-        </div>
+    <ion-content class="has-header">
 
         <div class="content">
             <line-stops ng-if="stops" on-stop-selected="onStopSelected({stop:stop})" stops="stops" />
